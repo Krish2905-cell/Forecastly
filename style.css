@@ -1,0 +1,209 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: url("https://images.unsplash.com/photo-1501973801540-537f08ccae7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80") no-repeat center center/cover;
+    
+      min-height: 100vh;
+      padding: 20px;
+      transition: background 1s ease-in-out;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .search-container {
+      background: rgba(255,255,255,0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .search-container h1 {
+      color: #2d3436;
+      margin-bottom: 20px;
+    }
+
+    .search-box {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    input {
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 25px;
+      font-size: 16px;
+      width: 300px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #74b9ff;
+    }
+
+    button {
+      padding: 12px 24px;
+      background: #0984e3;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #0870d1;
+    }
+
+    .weather-card {
+      background: rgba(255,255,255,0.85);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      text-align: center;
+      display: none;
+      backdrop-filter: blur(8px);
+    }
+
+    .weather-card.show {
+      display: block;
+    }
+
+    .weather-icon {
+      font-size: 60px;
+      margin: 20px 0;
+    }
+
+    .temperature {
+      font-size: 48px;
+      font-weight: bold;
+      color: #2d3436;
+      margin: 10px 0;
+    }
+
+    .location {
+      font-size: 24px;
+      color: #636e72;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      font-size: 18px;
+      color: #636e72;
+      text-transform: capitalize;
+      margin-bottom: 20px;
+    }
+
+    .weather-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .detail-item {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .forecast-container {
+      display: none;
+    }
+
+    .forecast-container.show {
+      display: block;
+    }
+
+    .forecast-title {
+      font-size: 24px;
+      color: #fff;
+      margin-bottom: 20px;
+      text-align: center;
+      text-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .forecast-grid {
+      display: flex;
+      gap: 15px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .forecast-item {
+      flex: 1;
+      min-width: 140px;
+      background: rgba(255,255,255,0.85);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s;
+      backdrop-filter: blur(6px);
+    }
+
+    .forecast-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .forecast-date {
+      font-size: 14px;
+      color: #636e72;
+      margin-bottom: 10px;
+    }
+
+    .forecast-icon {
+      font-size: 30px;
+      margin: 10px 0;
+    }
+
+    .forecast-temp {
+      font-size: 16px;
+      font-weight: bold;
+      color: #2d3436;
+    }
+
+    .error-message {
+      background: #ff7675;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      margin: 20px 0;
+      display: none;
+    }
+
+    .loading {
+      text-align: center;
+      color: white;
+      font-size: 18px;
+      margin: 20px 0;
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      input {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .search-box {
+        flex-direction: column;
+        align-items: center;
+      }
+      .weather-details {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
